@@ -3,9 +3,7 @@ package src.main.java.org.example.Graph_Connectivity_Components;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -20,6 +18,8 @@ public class Main {
     public static void dfs(int v, int num, int[][] adj_matrix) {
         component[v] = num;
 
+
+
         for (int u = 0; u < adj_matrix.length; ++u) {
             if (adj_matrix[v][u] == 1 && component[u] == 0) {
                 dfs(u, num, adj_matrix);
@@ -28,6 +28,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
+
         Scanner scanner = new Scanner(new File("in.txt"));
 
         int matrix_rang = Integer.parseInt(scanner.nextLine());
